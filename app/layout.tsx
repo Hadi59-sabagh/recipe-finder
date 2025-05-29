@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
         <header className="bg-orange-500 dark:bg-orange-600 text-white shadow-md">
   <nav className="container mx-auto flex items-center justify-between p-4" dir="rtl">
-    {/* منو سمت راست */}
+    
     <div className="flex gap-12 font-semibold text-lg">
       <Link href="/" className="text-white no-underline hover:text-orange-300 transition-colors duration-200">
         خانه
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Link>
     </div>
 
-    {/* دکمه تاریک روشن سمت چپ */}
+    
     <div>
       <ThemeToggle />
     </div>

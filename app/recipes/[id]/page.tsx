@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function RecipeDetailPage({ params }: Props) {
-  const resolvedParams = use(params); // unwrap کردن Promise params
+  const resolvedParams = use(params); 
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
@@ -48,10 +48,7 @@ export default function RecipeDetailPage({ params }: Props) {
   const handleDownloadPDF = () => {
     if (!ref.current || !recipe) return;
 
-    // برای رفع ارور رنگ oklch، بهتره در زمان pdf گرفتن یک کلاس ساده به ریشه اضافه کنیم
-    // یا اینکه استایل‌ها رو با css پاک کنیم، اینجا ساده‌ترین حالت رو در نظر می‌گیریم.
-
-    // می‌تونیم قبل از فراخوانی pdf کلاس simple-pdf رو اضافه کنیم و بعد حذف کنیم:
+    
     const element = ref.current;
     element.classList.add('simple-pdf');
 
@@ -78,7 +75,7 @@ export default function RecipeDetailPage({ params }: Props) {
   return (
     <>
       <style>{`
-        /* این کلاس برای ساخت pdf استایل‌ها را ساده می‌کند و رنگ‌های ناسازگار را حذف می‌کند */
+       
         .simple-pdf {
           color: black !important;
           background: white !important;
@@ -90,11 +87,11 @@ export default function RecipeDetailPage({ params }: Props) {
           text-shadow: none !important;
           filter: none !important;
         }
-        /* جایگزین رنگ‌های oklch در این کلاس */
+        
         .text-orange-600 {
           color: #ea580c !important;
         }
-        /* برای رفع مشکل hover روی دکمه داخل PDF */
+       
         .simple-pdf button {
           pointer-events: none !important;
         }

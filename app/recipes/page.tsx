@@ -19,7 +19,7 @@ export default async function RecipesPage({
 }) {
   const query = searchParams.q ?? '';
   const diet = searchParams.diet ?? '';
-  const page = Number(searchParams.page ?? '1');   // صفحه فعلی
+  const page = Number(searchParams.page ?? '1');   
 
   const list = await RecipeList({
     query,

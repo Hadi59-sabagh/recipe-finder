@@ -21,7 +21,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const stored = localStorage.getItem('theme') as Theme | null;
     const initial = stored || 'light';
   
-    // حذف هر کلاس قبلی (در صورت وجود)
+    
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(initial);
   
@@ -35,7 +35,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 
-    // پاک‌کردن کلاس قبلی و اضافه‌کردن جدید
+  
     document.documentElement.classList.remove(theme);
     document.documentElement.classList.add(newTheme);
   };
